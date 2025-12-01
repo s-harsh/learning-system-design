@@ -2,7 +2,7 @@
 
 This roadmap is designed to take you from a basic understanding of coding to mastering High-Level Design (HLD) and Low-Level Design (LLD), enabling you to build scalable solutions like Netflix or Instagram.
 
-## 🗺️ Roadmap Overview
+## Roadmap Overview
 
 - **Phase 1: Foundations (0-2 Months)** - Networking, Database Internals, OS basics.
 - **Phase 2: Low-Level Design (LLD) (2-3 Months)** - OOP, Design Patterns, Schema Design.
@@ -26,7 +26,7 @@ This roadmap is designed to take you from a basic understanding of coding to mas
 
 ---
 
-## 🧩 Phase 2: Low-Level Design (LLD)
+## Phase 2: Low-Level Design (LLD)
 *Focus on code maintainability, extensibility, and object-oriented design.*
 
 ### 1. Object-Oriented Programming (OOP)
@@ -51,7 +51,7 @@ This roadmap is designed to take you from a basic understanding of coding to mas
 
 ---
 
-## 🚀 Phase 3: High-Level Design (HLD)
+## Phase 3: High-Level Design (HLD)
 *Focus on scalability, availability, and reliability.*
 
 ### 1. Core Concepts
@@ -74,7 +74,7 @@ This roadmap is designed to take you from a basic understanding of coding to mas
 
 ---
 
-## 🏢 Phase 4: Real-World Architectures
+## Phase 4: Real-World Architectures
 *Deconstruct famous systems to understand how they handle scale.*
 
 ### 1. Netflix (Video Streaming)
@@ -95,27 +95,27 @@ This roadmap is designed to take you from a basic understanding of coding to mas
 
 ---
 
-## 📚 Resources
+## Resources
 
-### 📺 YouTube Channels (Best for Visual Learners)
+### YouTube Channels (Best for Visual Learners)
 1.  **[ByteByteGo (Alex Xu)](https://www.youtube.com/@ByteByteGo)** - Excellent animations, clear explanations.
 2.  **[Gaurav Sen](https://www.youtube.com/@GKcs)** - Deep dives into system components and interview questions.
 3.  **[Hussein Nasser](https://www.youtube.com/@hnasr)** - Great for backend engineering concepts (databases, networking).
 4.  **[Exponent](https://www.youtube.com/@tryexponent)** - Mock interviews to see how it's done in practice.
 5.  **[System Design Fight Club](https://www.youtube.com/@SDFC)** - Advanced discussions.
 
-### 📖 Books (Best for Deep Dives)
+### Books (Best for Deep Dives)
 1.  **"Designing Data-Intensive Applications" (DDIA)** by Martin Kleppmann - *The Bible of System Design.* (Must Read).
 2.  **"System Design Interview – An Insider's Guide" (Vol 1 & 2)** by Alex Xu - *Best for interview prep.*
 3.  **"Building Microservices"** by Sam Newman.
 
-### 💻 GitHub Repositories
+### GitHub Repositories
 1.  **[System Design Primer](https://github.com/donnemartin/system-design-primer)** - Comprehensive guide with diagrams.
 2.  **[Awesome System Design](https://github.com/madd86/awesome-system-design)** - Curated list of resources.
 
 ---
 
-## 🛠️ How to Implement & Document (Real-Life Application)
+## How to Implement & Document (Real-Life Application)
 
 ### 1. Build "Toy" Versions of Real Systems
 Don't just read. Build.

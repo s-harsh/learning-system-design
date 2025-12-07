@@ -1,0 +1,40 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg" style="background-color:#1e1e1e">
+        
+        <style>
+            text { font-family: Consolas, monospace; fill: #e0e0e0; }
+            .title { font-size: 24px; font-weight: bold; fill: #61dafb; }
+            .subtitle { font-size: 16px; fill: #ffeb3b; }
+            .code { font-size: 14px; fill: #dcdcaa; }
+            .box { fill: #2d2d2d; stroke: #61dafb; stroke-width: 2; rx: 10; }
+            .bad-box { fill: #2d2d2d; stroke: #f44336; stroke-width: 2; rx: 10; }
+            .good-box { fill: #2d2d2d; stroke: #4caf50; stroke-width: 2; rx: 10; }
+            .arrow { stroke: #e0e0e0; stroke-width: 2; marker-end: url(#arrowhead); }
+        </style>
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#e0e0e0" />
+            </marker>
+        </defs>
+    
+        <text x="300" y="40" text-anchor="middle" class="title">DRY (Don't Repeat Yourself)</text>
+        
+        <!-- WET Side -->
+        <rect x="50" y="80" width="200" height="180" class="bad-box" />
+        <text x="150" y="110" text-anchor="middle" fill="#f44336" font-weight="bold">WET (Bad)</text>
+        <text x="70" y="140" class="code">def area(r):</text>
+        <text x="80" y="160" class="code">return 3.14 * r * r</text>
+        
+        <text x="70" y="200" class="code">def vol(r, h):</text>
+        <text x="80" y="220" class="code"># Repetition!</text>
+        <text x="80" y="240" class="code">base = 3.14 * r * r</text>
+
+        <!-- DRY Side -->
+        <rect x="350" y="80" width="200" height="180" class="good-box" />
+        <text x="450" y="110" text-anchor="middle" fill="#4caf50" font-weight="bold">DRY (Good)</text>
+        <text x="370" y="140" class="code">class Math:</text>
+        <text x="380" y="160" class="code">PI = 3.14</text>
+        
+        <text x="370" y="200" class="code">def area(r):</text>
+        <text x="380" y="220" class="code"># Single Truth</text>
+        <text x="380" y="240" class="code">return PI * r**2</text>
+    </svg>

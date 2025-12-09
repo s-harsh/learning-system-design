@@ -1,32 +1,30 @@
-# Day 10: How Netflix & Uber use Proxies 🚀
+# Day 10: The Gatekeepers & The Foundation 🏛️
 
-We all know a Proxy "hides the server". But big tech uses them for much more than that.
-Today I learned the **Real-World Proxy Patterns** that power the apps we use daily.
+"Code is ephemeral. It changes every sprint. Data is forever."
 
-### 1. The CDN Proxy (Netflix Analogy) 🎬
-Why does Netflix stream instantly?
-Because you aren't streaming from their main server in US. You are streaming from a **Caching Proxy** in your city.
--   **First User** fetches the video from US -> Proxy caches it.
--   **You (Second User)** fetch it from the Proxy.
--   **The Pattern**: A "Virtual Proxy" that handles expensive resources (4K video) smartly.
+Today, Day 10 of my System Design journey, I mastered the **Front** and the **Back** of scalable systems.
 
-### 2. The API Gateway (Uber Analogy) 🚗
-When you open an app, it needs your Profile, Ride History, and Nearby Cars.
-Does it send 3 requests? No.
-It sends **One Request** to an **API Gateway Proxy**.
--   The Proxy "fans out" the request to 3 microservices internally.
--   It stitches the answers together.
--   It sends one clean JSON back to your phone.
--   **The Pattern**: An "Aggregator Proxy" to check multiple services behind one interface.
+### 1. The Front: Advanced Proxies (Netflix & Uber) 🛡️
+I moved beyond basic "Load Balancers" to understand the patterns that power Big Tech:
+- **The CDN Proxy (Netflix)**: Streaming doesn't happen from the US. It happens from a "Caching Proxy" in your city.
+- **The API Gateway (Uber)**: Your phone doesn't call 5 services. It calls one "Aggregator Proxy" that stitches User+Location+Ride data into one response.
+
+### 2. The Back: Schema Design (The Lost Art) �️
+If you screw up the database schema, no amount of clean code will save you.
+I dove deep into **Normalization**:
+- **1NF**: Atomic values (No lists in cells!).
+- **2NF**: No Partial Dependencies (Respect the Primary Key).
+- **3NF**: No Transitive Dependencies (Don't store 'Instructor Phone' in the 'Student' table).
+
+We applied this to build a full **Library Management System** schema from scratch. 📚
 
 ---
 
-### 🧠 Key Takeaway
-Proxies aren't just firewall guards. They are:
-1.  **Caches** (CDN).
-2.  **Aggregators** (Gateways).
-3.  **Bouncers** (Security).
+### 🧠 The takeaway
+To be a System Architect, you need to understand:
+1.  **Infrastructure** (Proxies/CDNs) to handle the Traffic.
+2.  **Data Modeling** (Normalization) to handle the Truth.
 
-*I've visualised these architectures in the repo!* 👇
+*I've pushed the Advanced Proxy notes and the full Library Schema to the repo!* 👇
 
-#SystemDesign #Architecture #Netflix #Uber #ProxyPattern #SoftwareEngineering #Learning
+#SystemDesign #DatabaseDesign #SQL #Nginx #CDN #Normalization #SoftwareArchitecture #Learning

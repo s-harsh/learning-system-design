@@ -1,33 +1,32 @@
-# Day 10: The Gatekeepers & The Foundation 🏛️
+# Day 10: How Netflix & Uber use Proxies 🚀
 
-"Code is ephemeral. It changes every sprint. Data is forever."
+We all know a Proxy "hides the server". But big tech uses them for much more than that.
+Today I learned the **Real-World Proxy Patterns** that power the apps we use daily.
 
-Today, Day 10 of my System Design journey, I stopped writing code and started designing the **Backbone** of software.
+### 1. The CDN Proxy (Netflix Analogy) 🎬
+Why does Netflix stream instantly?
+Because you aren't streaming from their main server in US. You are streaming from a **Caching Proxy** in your city.
+-   **First User** fetches the video from US -> Proxy caches it.
+-   **You (Second User)** fetch it from the Proxy.
+-   **The Pattern**: A "Virtual Proxy" that handles expensive resources (4K video) smartly.
 
-Here is the breakdown:
-
-### 1. The Proxy Pattern 🛡️
-I learned that you never let a user talk directly to your Production DB. You put a **Gatekeeper** in the middle.
-- **The Concept**: "The Club Bouncer".
-- **The Job**: Security (Auth check), Caching (Returning data fast), and Lazy Loading (Don't load the 1GB file until needed).
-- **Real World**: Nginx, Cloudflare, CDN. They are all Proxies protecting your app.
-
-### 2. Schema Design: The Lost Art 🗄️
-If you screw up the database schema, no amount of clean code will save you.
-I dove deep into **Normalization**:
-- **1NF**: Atomic values (No lists in cells!).
-- **2NF**: No Partial Dependencies (Respect the Primary Key).
-- **3NF**: No Transitive Dependencies (Don't store 'Instructor Phone' in the 'Student' table).
-
-We applied this to build a full **Library Management System** schema from scratch. 📚
+### 2. The API Gateway (Uber Analogy) 🚗
+When you open an app, it needs your Profile, Ride History, and Nearby Cars.
+Does it send 3 requests? No.
+It sends **One Request** to an **API Gateway Proxy**.
+-   The Proxy "fans out" the request to 3 microservices internally.
+-   It stitches the answers together.
+-   It sends one clean JSON back to your phone.
+-   **The Pattern**: An "Aggregator Proxy" to check multiple services behind one interface.
 
 ---
 
-### 🧠 The Senior Dev Insight
-A Junior Dev rushes to write `class User`.
-A Senior Dev grabs a whiteboard and draws an **Entity-Relationship (ER) Diagram**.
-Because refactoring code is cheap. Migrating 10 Million rows of bad data is expensive.
+### 🧠 Key Takeaway
+Proxies aren't just firewall guards. They are:
+1.  **Caches** (CDN).
+2.  **Aggregators** (Gateways).
+3.  **Bouncers** (Security).
 
-*I've pushed the Proxy implementation and the full Library Schema to the repo!* 👇
+*I've visualised these architectures in the repo!* 👇
 
-#SystemDesign #DatabaseDesign #SQL #ProxyPattern #SoftwareArchitecture #Learning #100DaysOfCode
+#SystemDesign #Architecture #Netflix #Uber #ProxyPattern #SoftwareEngineering #Learning

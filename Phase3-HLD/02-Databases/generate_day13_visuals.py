@@ -1,0 +1,68 @@
+import os
+
+def create_svg_file(filename, content):
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"Generated: {filename}")
+
+def main():
+    base_dir = r"c:\Harsh\Learning\learning-system-design\Phase3-HLD\02-Databases"
+    os.makedirs(base_dir, exist_ok=True)
+
+    # Style constants
+    bg_color = "#121212"
+    text_color = "#e0e0e0"
+    accent_blue = "#61dafb"
+    accent_green = "#4caf50"
+    accent_red = "#f44336"
+    font_family = "Consolas, monospace"
+
+    svg_content = f"""<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg" style="background-color:{bg_color}">
+        <style>
+            text {{ font-family: {font_family}; fill: {text_color}; }}
+            .title {{ font-size: 24px; font-weight: bold; fill: {accent_blue}; }}
+            .circle {{ fill-opacity: 0.3; stroke-width: 2; }}
+            .label {{ font-size: 18px; font-weight: bold; }}
+            .small-text {{ font-size: 12px; fill: #aaa; }}
+            .example {{ font-size: 14px; font-weight: bold; fill: #fff; }}
+        </style>
+        
+        <text x="400" y="40" text-anchor="middle" class="title">The CAP Theorem</text>
+        <text x="400" y="70" text-anchor="middle" class="small-text">Pick Two (But P is mandatory)</text>
+
+        <!-- Consistency Circle (Top Left) -->
+        <circle cx="300" cy="200" r="120" class="circle" fill="{accent_red}" stroke="{accent_red}" />
+        <text x="250" y="150" class="label" fill="{accent_red}">Consistency</text>
+        <text x="250" y="170" class="small-text">"Latest Data"</text>
+
+        <!-- Availability Circle (Top Right) -->
+        <circle cx="500" cy="200" r="120" class="circle" fill="{accent_green}" stroke="{accent_green}" />
+        <text x="550" y="150" class="label" fill="{accent_green}">Availability</text>
+        <text x="550" y="170" class="small-text">"Always Up"</text>
+
+        <!-- Partition Tolerance (Bottom) -->
+        <circle cx="400" cy="350" r="120" class="circle" fill="{accent_blue}" stroke="{accent_blue}" />
+        <text x="400" y="420" text-anchor="middle" class="label" fill="{accent_blue}">Partition Tolerance</text>
+        <text x="400" y="440" text-anchor="middle" class="small-text">"Network Failures"</text>
+
+        <!-- Intersections -->
+        
+        <!-- CA (Top Middle) -->
+        <text x="400" y="180" text-anchor="middle" class="example" fill="#ccc">CA</text>
+        <text x="400" y="200" text-anchor="middle" class="small-text">(RDBMS, SQL)</text>
+        <text x="400" y="220" text-anchor="middle" class="small-text"fill="#f00">*Impossible in Distributed Systems</text>
+
+        <!-- CP (Left Middle) -->
+        <text x="280" y="300" text-anchor="middle" class="example" fill="{accent_red}">CP</text>
+        <text x="280" y="320" text-anchor="middle" class="small-text">Banks, MongoDB, Redis</text>
+
+        <!-- AP (Right Middle) -->
+        <text x="520" y="300" text-anchor="middle" class="example" fill="{accent_green}">AP</text>
+        <text x="520" y="320" text-anchor="middle" class="small-text">Cassandra, DynamoDB</text>
+
+    </svg>"""
+    
+    create_svg_file(os.path.join(base_dir, "day13_cap_theorem.svg"), svg_content)
+
+if __name__ == "__main__":
+    main()

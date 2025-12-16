@@ -1,0 +1,48 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" style="background-color:#121212">
+        <style>
+            text { font-family: Consolas, monospace; fill: #e0e0e0; }
+            .title { font-size: 24px; font-weight: bold; fill: #61dafb; }
+            .ring { fill: none; stroke: #333; stroke-width: 10; }
+            .server-node { fill: #61dafb; stroke: #fff; stroke-width: 2; }
+            .user-node { fill: #ffeb3b; stroke: #fff; stroke-width: 1; }
+            .label { font-size: 14px; font-weight: bold; }
+            .arrow { stroke: #fff; stroke-width: 1; stroke-dasharray: 4; marker-end: url(#arrow); }
+        </style>
+        
+        <text x="400" y="50" text-anchor="middle" class="title">Consistent Hashing Ring 🍩</text>
+
+        <!-- The Ring -->
+        <circle cx="400" cy="300" r="180" class="ring" />
+
+        <!-- Server A at 0 degrees (Top) -->
+        <circle cx="400" cy="120" r="15" class="server-node" />
+        <text x="400" y="95" text-anchor="middle" class="label" fill="#61dafb">Server A (0)</text>
+
+        <!-- Server B at 120 degrees -->
+        <circle cx="555.88" cy="390.0" r="15" class="server-node" />
+        <text x="575.88" y="390.0" text-anchor="start" class="label" fill="#61dafb">Server B (120)</text>
+
+        <!-- Server C at 240 degrees -->
+        <circle cx="244.12" cy="390.0" r="15" class="server-node" />
+        <text x="224.12" y="390.0" text-anchor="end" class="label" fill="#61dafb">Server C (240)</text>
+        
+        <!-- User 1 (Mapped to Server B) -->
+        <!-- Placed at 60 degrees -->
+        <circle cx="477.94" cy="240.06" r="8" class="user-node" />
+        <text x="510.0" y="174.0" class="label" fill="#ffeb3b">Key: John (60)</text>
+        <!-- Arrow Clockwise to Server B -->
+        <path d="M 508.0 210.0 Q 562.0 300 555.88 372.0" fill="none" class="arrow" />
+
+
+        <!-- VNode Explanation Box -->
+        <rect x="50" y="480" width="700" height="100" fill="#222" rx="10" />
+        <text x="70" y="510" font-weight="bold" fill="#fff">Handling HotSpots (Virtual Nodes):</text>
+        <text x="70" y="535" font-size="12" fill="#aaa">Instead of 1 circle per server, Server A puts 100 random tokens (A1, A2, A3) on the ring.</text>
+        <text x="70" y="555" font-size="12" fill="#aaa">This ensures data distribution is statistically even.</text>
+
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L0,6 L9,3 z" fill="#fff" />
+            </marker>
+        </defs>
+    </svg>
